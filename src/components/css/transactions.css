@@ -1,0 +1,33 @@
+table,
+th,
+td {
+    border: 1px solid white;
+    text-align: center;
+}
+td {
+    padding: 5px 10px 5px 10px    ;
+}
+.transaction-history{
+    margin-right: auto;
+    margin-left: auto;
+    width: 360px;
+    padding: 5px;
+    background-color: #d4c8e5;
+}
+.table-title{
+    font-size: 15px;
+}
+.table-item.deposit{
+    background-color: rgba(74, 216, 80, 0.28);
+}
+.table-item.payment {
+    background-color: rgba(238, 83, 0, 0.28);
+}
+.table-item.invoice {
+    background-color: rgba(255, 167, 0, 0.28);
+}
+.table-item.withdrawal {
+    background-color: rgba(87, 182, 225, 0.28);
+}
+
+
