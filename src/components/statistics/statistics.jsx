@@ -5,12 +5,20 @@ function getRandomHexColor() {
         .padStart(6, 0)}`;
     }
 
-export const Statistics = (props) => {
+export const Statistics = ({title, stats}) => {
     return (
         <section class="statistics">
-            <h2 class="title">Upload stats</h2>
+
+           {title && <h2 class="title">{title}</h2>} 
             <ul class="stat-list">
-                <li style={{ backgroundColor : getRandomHexColor() }} class="item">
+                {stats.map(item => {
+                    return (
+                    <li style={{ backgroundColor : getRandomHexColor() }} class="item">
+                    <span class="label">{item.label}</span>
+                    <span class="percentage">{item.percentage}%</span>
+                </li>)
+                })}
+                {/* <li style={{ backgroundColor : getRandomHexColor() }} class="item">
                     <span class="label">{props.stats[0].label}</span>
                     <span class="percentage">{props.stats[0].percentage}%</span>
                 </li>
@@ -25,7 +33,7 @@ export const Statistics = (props) => {
                 <li style={{ backgroundColor : getRandomHexColor() }} class="item">
                     <span class="label">{props.stats[3].label}</span>
                     <span class="percentage">{props.stats[3].percentage}%</span>
-                </li>
+                </li> */}
             </ul>
         </section>
     );
