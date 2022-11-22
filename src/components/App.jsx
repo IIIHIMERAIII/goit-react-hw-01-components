@@ -1,11 +1,11 @@
-import user from "./json/user.json";
-import data from './json/data.json';
-import friends from "./json/friends.json";
-import transactions from "./json/transactions.json";
-import { Profile } from "./jsx/profile";
-import { Statistics } from "./jsx/statistics";
-import { FriendList } from "./jsx/friend-list";
-import { TransactionHistory } from "./jsx/transactions";
+import user from "./user/user.json";
+import data from './statistics/data.json';
+import friends from "./friendList/friends.json";
+import transactions from "./transactions/transactions.json";
+import { Profile } from "./user/profile";
+import { Statistics } from "./statistics/statistics";
+import { FriendList } from "./friendList/friendList";
+import { TransactionHistory } from "./transactions/transactions.jsx";
 
 export const App = () => {
   return (
@@ -18,24 +18,11 @@ export const App = () => {
         stats={user.stats}
     />
       <Statistics stats={data} />
-      <ul class="friend-list">
         <FriendList 
           friends={friends}
         />
-      </ul>
-      <table class="transaction-history">
-    <thead>
-    <tr>
-      <th class="table-title">Type</th>
-      <th class="table-title">Amount</th>
-      <th class="table-title">Currency</th>
-    </tr>
-        </thead>
-          <tbody class="table-body">
-            <TransactionHistory
-              items={transactions} />
-          </tbody>
-      </table>
+      <TransactionHistory
+          items={transactions} />
     </div>
   ); 
 };
